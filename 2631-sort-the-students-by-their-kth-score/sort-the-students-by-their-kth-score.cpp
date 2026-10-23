@@ -11,9 +11,7 @@ public:
            v.push_back({score[i][k], (-1 * i)});
            }
 
-           sort(v.begin(), v.end(), [](pair<int, int>& a, pair<int, int>& b) {
-    return a.first > b.first;
-});
+           sort(v.begin(), v.end() ,greater<pair<int, int>>());
 
            vector<int>newrow;
 
