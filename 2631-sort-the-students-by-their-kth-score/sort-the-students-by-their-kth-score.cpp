@@ -5,51 +5,33 @@ public:
         int m = score.size();
         int n = score[0].size();
 
-        vector<pair<int , int>>v;
+        vector<pair<int, int>> v;
 
-           for(int i = 0; i<m; i++){
-           v.push_back({score[i][k], (-1 * i)});
-           }
+        for (int i = 0; i < m; i++) {
+            v.push_back({score[i][k], (-1 * i)});
+        }
 
-           sort(v.begin(), v.end() ,greater<pair<int, int>>());
+        sort(v.begin(), v.end(), greater<pair<int, int>>());
 
-           vector<int>newrow;
+        vector<int> newrow;
 
-           for(int i=0; i<v.size(); i++){
+        for (int i = 0; i < v.size(); i++) {
 
             newrow.push_back(-1 * v[i].second);
+        }
 
-           }
+        vector<vector<int>> ans;
 
-           vector<vector<int>>ans;
+        for (int i = 0; i < newrow.size(); i++) {
 
-
-           for(int i=0; i<newrow.size(); i++){
-            vector<int>row;
-
-            for(int j = 0; j<n; j++){
-
-                row.push_back(score [newrow[i]][j]);
-
-
-            }
-
-            ans.push_back(row);
-
-           }
+            ans.push_back(score[newrow[i]]);
 
 
 
+        }
 
 
-
-
-
-return ans;
-
-
-
-      
-        
-    }
-};
+    return ans;
+}
+}
+;
